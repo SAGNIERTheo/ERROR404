@@ -22,7 +22,7 @@ USE `error404` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `error404`.`roles` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
   `description` LONGTEXT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ) )
@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `error404`.`promo` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ) )
 ENGINE = InnoDB;
@@ -45,16 +45,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `error404`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NOT NULL,
-  `name` VARCHAR(45) NOT NULL,
-  `firstName` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
+  `pseudo` VARCHAR(255) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `firstName` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
   `pwd` VARCHAR(255) NOT NULL,
   `age` INT NULL,
   `roles_id` INT NOT NULL,
   `promo_id` INT NOT NULL,
   PRIMARY KEY (`id`, `roles_id`, `promo_id`),
-  UNIQUE INDEX `username_UNIQUE` (`username` ) ,
+  UNIQUE INDEX `pseudo_UNIQUE` (`pseudo` ) ,
   UNIQUE INDEX `email_UNIQUE` (`email` ) ,
   INDEX `fk_user_roles_idx` (`roles_id` ) ,
   INDEX `fk_user_promo1_idx` (`promo_id` ) ,
@@ -76,7 +76,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `error404`.`event` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
   `price` FLOAT NOT NULL,
   `dateStart` DATE NOT NULL,
   `place` LONGTEXT NOT NULL,
@@ -118,7 +118,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `error404`.`invoice` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `saleDate` DATE NOT NULL,
-  `file` VARCHAR(45) NULL,
+  `file` VARCHAR(255) NULL,
   `user_id` INT NOT NULL,
   `user_roles_id` INT NOT NULL,
   `user_promo_id` INT NOT NULL,
@@ -143,7 +143,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `error404`.`quote` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `saleDate` DATE NOT NULL,
-  `file` VARCHAR(45) NULL,
+  `file` VARCHAR(255) NULL,
   `user_id` INT NOT NULL,
   `user_roles_id` INT NOT NULL,
   `user_promo_id` INT NOT NULL,
