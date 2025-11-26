@@ -49,10 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <section class="container-login">
     <div class="logo-login">
-        <img src="/assets/images/Logo.png" alt="logo de la web app 'Garant'IA'" >
-    </div>
-    <div id="register-title">
-        <p>Le Dashboard de garanties qui ne vous fera pas oublier votre argent.</p>
+        <img src="/assets/images/Logo.png" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
     </div>
 
     <form action="#" method="POST">
