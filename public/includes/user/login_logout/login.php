@@ -16,23 +16,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         try {
             // Récupérer l'utilisateur par email
-            $stmt = $pdo->prepare("SELECT * FROM user WHERE userEmail = ?");
+            $stmt = $pdo->prepare("SELECT * FROM user WHERE email = ?");
             $stmt->execute([$userEmail]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($user && password_verify($userPwd, $user['userPwd'])) {
                 // Connexion réussie, création des sessions
-                $_SESSION['iduser'] = $user['iduser'];
-                $_SESSION['userName'] = $user['userName'];
-                $_SESSION['userSurname'] = $user['userSurname'];
-                $_SESSION['userEmail'] = $user['userEmail'];
-                $_SESSION['role_iduserRole'] = $user['role_iduserRole'];
+                $_SESSION['id'] = $user['userId'];
+                $_SESSION['pseudo'] = $user['userPseudo'];
+                $_SESSION['name'] = $user['userName'];
+                $_SESSION['firstName'] = $user['userFirstname'];
+                $_SESSION['email'] = $user['userEmail'];
+                $_SESSION['age'] = $user['userAge'];
+                $_SESSION['roles_id'] = $user['userRolesId'];
+                $_SESSION['promo_id'] = $user['userPromoId'];
 
                 // Message de succès et redirection après 1.5 sec
                 echo "<p>Connexion réussie ! Redirection en cours...</p>";
                 echo "<script>
                     setTimeout(function(){
-                        window.location.href = 'layout.php';
+                        window.location.href = 'http://localhost:8000/?page=dashboard';
                     }, 1500);
                 </script>";
                 exit();
