@@ -1,0 +1,75 @@
+<?php
+
+
+
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $userEmail = trim($_POST['userEmail']);
+    $userPwd = $_POST['userPwd'];
+
+    if (empty($userEmail) || empty($userPwd)) {
+        $message = "Veuillez remplir tous les champs.";
+    } elseif (!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
+        $message = "Adresse email invalide.";
+    } else {
+        try {
+            // Récupérer l'utilisateur par email
+            $stmt = $pdo->prepare("SELECT * FROM user WHERE email = ?");
+            $stmt->execute([$userEmail]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($user && password_verify($userPwd, $user['userPwd'])) {
+                // Connexion réussie, création des sessions
+                $_SESSION['id'] = $user['userId'];
+                $_SESSION['pseudo'] = $user['userPseudo'];
+                $_SESSION['name'] = $user['userName'];
+                $_SESSION['firstName'] = $user['userFirstname'];
+                $_SESSION['email'] = $user['userEmail'];
+                $_SESSION['age'] = $user['userAge'];
+                $_SESSION['roles_id'] = $user['userRolesId'];
+                $_SESSION['promo_id'] = $user['userPromoId'];
+
+                // Message de succès et redirection après 1.5 sec
+                echo "<p>Connexion réussie ! Redirection en cours...</p>";
+                echo "<script>
+                    setTimeout(function(){
+                        window.location.href = 'http://localhost:8000/?page=dashboard';
+                    }, 1500);
+                </script>";
+                exit();
+            } else {
+                $message = "Email ou mot de passe incorrect.";
+            }
+        } catch(PDOException $e) {
+            $message = "Erreur serveur : " . $e->getMessage();
+        }
+    }
+}
+?>
+
+
+<section class="container-login">
+    <div class="logo-login">
+        <img src="/assets/images/Logo.png" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
+    </div>
+
+    <form action="#" method="POST">
+        <h2>Connexion</h2>
+        <input type="email" name="userEmail" placeholder="Votre email" required value="<?= htmlspecialchars($_POST['userEmail'] ?? '') ?>">
+        <input type="password" name="userPwd" placeholder="Votre mot de passe" required>
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <a href="http://localhost:8000/?page=register">
+        <button class="register-btn">Créer mon compte</button>
+    </a>
+
+    <a href="http://localhost:8000/?page=pwdForget">
+        <p class="pwd-user-btn">Mot de passe oublié ?</p>
+    </a>
+
+    <?php if ($message !== "") { echo "<p>$message</p>"; }?>
+
+</section>
