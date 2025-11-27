@@ -20,6 +20,8 @@ $routes = [
     'profile'      => 'public/pages/indexProfile.php',
     'admin'        => 'public/pages/indexAdmin.php',
     'shoppingCart' => 'public/includes/events/shoppingCart.php',
+    'modifyPseudo' => 'public/includes/user/profil/modifyPseudo.php',
+
 ];
 
 // Sécurité : page inexistante = erreur 404
@@ -30,7 +32,16 @@ if (!array_key_exists($page, $routes)) {
 }
 
 // Pages accessibles uniquement si connecté
-$privatePages = ['dashboard', 'events', 'alerts', 'profile', 'admin', 'shoppingCart'];
+$privatePages = [
+        'dashboard',
+        'events',
+        'alerts',
+        'profile',
+        'admin',
+        'shoppingCart',
+
+
+];
 
 if (in_array($page, $privatePages) && !isset($_SESSION['user_id'])) {
     header('Location: index.php?page=HomePage');
