@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } elseif ($pwd !== $confirmPwd) { 
         $message = "Les mots de passe ne correspondent pas.";
     } elseif (!preg_match($regexPwd, $pwd)) {
-        // ✅ MESSAGE MIS À JOUR
+        // MESSAGE MIS À JOUR
         $message = "Le mot de passe doit faire 8 caractères minimum, contenir au moins une majuscule, un chiffre et un caractère spécial.";
     } else {
         try {
@@ -51,6 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $insert->execute([
                     $pseudo, $name, $firstname, $email, $hashPwd, $age, $roleId, $promoId
                 ]);
+
+
 
                 echo "<p style='color:green'>Compte créé avec succès ! Redirection...</p>";
                 echo "<script>
@@ -74,9 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="text" name="name" placeholder="Nom" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>" required>
         <input type="text" name="firstname" placeholder="Prénom" value="<?= isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname']) : '' ?>" required>
         <input type="email" name="email" placeholder="Email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
-
         <input type="number" name="age" placeholder="Âge (optionnel)" value="<?= isset($_POST['age']) ? htmlspecialchars($_POST['age']) : '' ?>">
-
         <select name="promo" required>
             <option value="">-- Sélectionnez votre promo --</option>
             <?php foreach ($promos as $promo): ?>
