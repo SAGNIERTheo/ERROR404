@@ -32,8 +32,8 @@ if (!array_key_exists($page, $routes)) {
 // Pages accessibles uniquement si connecté
 $privatePages = ['dashboard', 'events', 'alerts', 'profile', 'admin', 'shoppingCart'];
 
-if (in_array($page, $privatePages) && !isset($_SESSION['user_id'])) {
-    header('Location: index.php?page=HomePage');
+if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
+    header('Location: index.php?page=homepage');
     exit;
 }
 
