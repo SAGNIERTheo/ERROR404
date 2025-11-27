@@ -1,7 +1,5 @@
 <?php
 
-
-
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -20,18 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->execute([$userEmail]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($user && password_verify($userPwd, $user['userPwd'])) {
-                // Connexion réussie, création des sessions
-                $_SESSION['id'] = $user['userId'];
-                $_SESSION['pseudo'] = $user['userPseudo'];
-                $_SESSION['name'] = $user['userName'];
-                $_SESSION['firstName'] = $user['userFirstname'];
-                $_SESSION['email'] = $user['userEmail'];
-                $_SESSION['age'] = $user['userAge'];
-                $_SESSION['roles_id'] = $user['userRolesId'];
-                $_SESSION['promo_id'] = $user['userPromoId'];
+            if ($user && password_verify($userPwd, $user['pwd'])) {
 
-                // Message de succès et redirection après 1.5 sec
+                // Connexion réussie, création des sessions
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['pseudo'] = $user['pseudo'];
+                $_SESSION['name'] = $user['name'];
+                $_SESSION['firstName'] = $user['firstName'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['age'] = $user['age'];
+                $_SESSION['roles_id'] = $user['roles_id'];
+                $_SESSION['promo_id'] = $user['promo_id'];
+
                 echo "<p>Connexion réussie ! Redirection en cours...</p>";
                 echo "<script>
                     setTimeout(function(){
@@ -39,9 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     }, 1500);
                 </script>";
                 exit();
+
             } else {
                 $message = "Email ou mot de passe incorrect.";
             }
+
         } catch(PDOException $e) {
             $message = "Erreur serveur : " . $e->getMessage();
         }
