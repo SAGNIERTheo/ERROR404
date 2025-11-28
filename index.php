@@ -5,7 +5,7 @@ session_start();
 
 require_once __DIR__ . '/config/BDD/db.php';
 
-// Page demandée (par défaut : login)
+// Page par défaut : Homepage
 $page = $_GET['page'] ?? 'homepage';
 
 // Liste blanche des pages autorisées

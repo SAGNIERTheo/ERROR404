@@ -15,8 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $confirmPwd = $_POST['confirm_pwd'];
     $promoId    = $_POST['promo'] ?? null;
 
-    // ✅ NOUVEAU REGEX : 
-    // Au moins 1 Maj, 1 Chiffre, 1 Spécial, Min 8 caractères
+    // regex : Au moins 1 Maj, 1 Chiffre, 1 Spécial, Min 8 caractères
     $regexPwd = '/^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/';
 
     if (
