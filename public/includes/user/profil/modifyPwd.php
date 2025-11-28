@@ -11,7 +11,7 @@ if (!empty($_POST)) {
         $stmt->execute([$pseudoVerify]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$user) {
-            echo "Utilisateur introuvable";
+            echo "mot de passe ou pseudo incorrect ";
             exit;
         }
         $id = $user['id'];

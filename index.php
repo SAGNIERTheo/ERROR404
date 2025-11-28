@@ -25,7 +25,7 @@ $routes = [
     'modifyName'      => 'public/includes/user/profil/modifyName.php',
     'modifyFirstName' => 'public/includes/user/profil/modifyFirstName.php',
     'modifyPwd'       => 'public/includes/user/profil/modifyPwd.php',
-
+    'createEvent'     => 'public/includes/admin/event/createEvent.php',
 ];
 
 // Sécurité : page inexistante = erreur 404
@@ -48,6 +48,7 @@ $privatePages = [
         'modifyName',
         'modifyFirstName',
         'modifyPwd',
+        'createEvent'
 
 ];
 
@@ -57,7 +58,10 @@ if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
 }
 
 // Pages accessibles uniquement par admin
-$adminPages = ['admin'];
+$adminPages = [
+        'admin',
+        'createEvent',
+];
 
 if (in_array($page, $adminPages)) {
     if (!isset($_SESSION['id']) || $_SESSION['roles'] !== 'admin') {
