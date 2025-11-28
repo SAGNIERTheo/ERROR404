@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 echo "<p>Connexion réussie ! Redirection en cours...</p>";
                 echo "<script>
                     setTimeout(function(){
-                        window.location.href = 'http://localhost:8000/?page=dashboard';
+                        window.location.href = '?page=dashboard';
                     }, 1500);
                 </script>";
                 exit();
