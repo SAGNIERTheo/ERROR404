@@ -21,6 +21,7 @@ $routes = [
     'admin'        => 'public/pages/indexAdmin.php',
     'shoppingCart' => 'public/includes/events/shoppingCart.php',
     'modifyPseudo' => 'public/includes/user/profil/modifyPseudo.php',
+    'modifyEmail' => 'public/includes/user/profil/modifyEmail.php',
 
 ];
 
