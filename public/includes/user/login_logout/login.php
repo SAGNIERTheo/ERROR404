@@ -17,6 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt = $pdo->prepare("SELECT * FROM user WHERE email = ?");
             $stmt->execute([$userEmail]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $stmt2 = $pdo->prepare("SELECT * FROM roles WHERE id = ?");
+            $stmt2->execute([$user['roles_id']]);
+            $roles = $stmt2 -> fetch(PDO::FETCH_ASSOC);
 
             if ($user && password_verify($userPwd, $user['pwd'])) {
 
@@ -27,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['firstName'] = $user['firstName'];
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['age'] = $user['age'];
-                $_SESSION['roles_id'] = $user['roles_id'];
+                $_SESSION['roles'] = $roles['name'];
+                var_dump($_SESSION['roles']);
                 $_SESSION['promo_id'] = $user['promo_id'];
 
                 echo "<p>Connexion réussie ! Redirection en cours...</p>";
