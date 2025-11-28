@@ -52,7 +52,7 @@ $privatePages = [
 ];
 
 if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
-    header('Location: index.php?page=homepage');
+    header('Location: ?page=homepage');
     exit;
 }
 
@@ -60,8 +60,8 @@ if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
 $adminPages = ['admin'];
 
 if (in_array($page, $adminPages)) {
-    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-        header('Location: index.php?page=dashboard');
+    if (!isset($_SESSION['id']) || $_SESSION['roles'] !== 'admin') {
+        header('Location: ?page=admin');
         exit;
     }
 }
