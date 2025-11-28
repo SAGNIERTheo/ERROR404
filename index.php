@@ -10,18 +10,21 @@ $page = $_GET['page'] ?? 'homepage';
 
 // Liste blanche des pages autorisées
 $routes = [
-    'homepage'     => 'public/pages/indexHomepage.php',
-    'login'        => 'public/includes/user/login_logout/login.php',
-    'register'     => 'public/includes/user/login_logout/register.php',
-    'logout'       => 'public/includes/user/login_logout/logout.php',
-    'dashboard'    => 'public/pages/indexDashboard.php',
-    'events'       => 'public/pages/indexEvents.php',
-    'alerts'       => 'public/pages/indexAlerts.php',
-    'profile'      => 'public/pages/indexProfile.php',
-    'admin'        => 'public/pages/indexAdmin.php',
-    'shoppingCart' => 'public/includes/events/shoppingCart.php',
-    'modifyPseudo' => 'public/includes/user/profil/modifyPseudo.php',
-    'modifyEmail' => 'public/includes/user/profil/modifyEmail.php',
+    'homepage'        => 'public/pages/indexHomepage.php',
+    'login'           => 'public/includes/user/login_logout/login.php',
+    'register'        => 'public/includes/user/login_logout/register.php',
+    'logout'          => 'public/includes/user/login_logout/logout.php',
+    'dashboard'       => 'public/pages/indexDashboard.php',
+    'events'          => 'public/pages/indexEvents.php',
+    'alerts'          => 'public/pages/indexAlerts.php',
+    'profile'         => 'public/pages/indexProfile.php',
+    'admin'           => 'public/pages/indexAdmin.php',
+    'shoppingCart'    => 'public/includes/events/shoppingCart.php',
+    'modifyPseudo'    => 'public/includes/user/profil/modifyPseudo.php',
+    'modifyEmail'     => 'public/includes/user/profil/modifyEmail.php',
+    'modifyName'      => 'public/includes/user/profil/modifyName.php',
+    'modifyFirstName' => 'public/includes/user/profil/modifyFirstName.php',
+    'modifyPwd'       => 'public/includes/user/profil/modifyPwd.php',
 
 ];
 
@@ -40,7 +43,11 @@ $privatePages = [
         'profile',
         'admin',
         'shoppingCart',
-
+        'modifyFirstName',
+        'modifyEmail',
+        'modifyName',
+        'modifyFirstName',
+        'modifyPwd',
 
 ];
 
