@@ -109,6 +109,6 @@ if(isset($_POST) && !empty($_POST)){
         $startDate =htmlspecialchars(trim($_POST['endDate']));
         $location = htmlspecialchars(trim($_POST['location']));
         $closeRegister = htmlspecialchars(trim($_POST['closeRegister']));
-        $img = htmlspecialchars(trim($_POST['img']));
+        $img = htmlspecialchars(trim($_POST['img'])); //non securiser a voir plus tard
     }
 }
