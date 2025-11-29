@@ -71,6 +71,16 @@ require $routes[$page];
 ?>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link rel="stylesheet" href="/assets/styles/dashboardStyle.css">
 </head>
+
+<!-- Mettre en place un title Head dynamique avec js (voir doc internet) 
+<head>
+    <title>Dashboard</title>
+</head>
+
+-->
     
