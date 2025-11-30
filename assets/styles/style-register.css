@@ -1,0 +1,103 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Container principal du Register */
+.container-login-register {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Logo */
+.logo-register img {
+    width: 140px;
+    margin-bottom: 20px;
+}
+
+/* Titre */
+.h2-register {
+    color: var(--noir);
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Formulaire */
+.form-register {
+    border-radius: 10px;
+    padding: 30px 35px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 0 20px rgba(var(--noir));
+}
+
+/* Inputs */
+.input-register,
+.select-register {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    color: var(--noir);
+    font-size: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+.input-register:focus,
+.select-register:focus {
+    outline: none;
+    border-color: var(--bleu);
+}
+
+/* Placeholder */
+.input-register::placeholder {
+    color: #bdbdbd;
+}
+
+/* Bouton */
+.btn-register {
+    margin-top: 10px;
+    padding: 12px;
+    background: var(--bleu);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #f1f1f1f1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-register:hover {
+    background: var(--noir);
+}
+
+/* Lien retour login */
+.a-register {
+    margin-top: 15px;
+    color: #9a9a9a;
+    text-decoration: underline transparent;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.a-register:hover {
+    color: #f1f1f1f1;
+    text-decoration: underline;
+}
+
+/* Message d'erreur */
+.container-login-register p {
+    margin-top: 10px;
+    color: var(--bleu);
+    font-size: 14px;
+    text-align: center;
+}

@@ -68,33 +68,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-<section class="container-login">
-    <h2>Créer un compte</h2>
+<section class="container-login-register">
+    <div class="logo-register">
+        <img src="/assets/images/Logo.png" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
+    </div>
 
-    <form method="POST">
-        <input type="text" name="pseudo" placeholder="Pseudo" required>
-        <input type="text" name="name" placeholder="Nom" required>
-        <input type="text" name="firstname" placeholder="Prénom" required>
-        <input type="email" name="email" placeholder="Email" required>
+    <h2 class="h2-register">Créer un compte</h2>
 
-        <input type="number" name="age" placeholder="Âge (optionnel)">
+    <form method="POST" class="form-register">
+        <input class="input-register" type="text" name="pseudo" placeholder="Pseudo" required>
+        <input class="input-register" type="text" name="name" placeholder="Nom" required>
+        <input class="input-register" type="text" name="firstname" placeholder="Prénom" required>
+        <input class="input-register" type="email" name="email" placeholder="Email" required>
+
+        <input class="input-register" type="number" name="age" placeholder="Âge (optionnel)">
 
         <!-- ✅ SELECT PROMO DYNAMIQUE -->
-        <select name="promo" required>
-            <option value="">-- Sélectionnez votre promo --</option>
+        <select class="select-register" name="promo" required>
+            <option class="option-register" value="">-- Sélectionnez votre promo --</option>
             <?php foreach ($promos as $promo): ?>
-                <option value="<?= $promo['id'] ?>">
+                <option class="option-register" value="<?= $promo['id'] ?>">
                     <?= htmlspecialchars($promo['name']) ?>
                 </option>
             <?php endforeach; ?>
         </select>
 
-        <input type="password" name="pwd" placeholder="Mot de passe" required>
+        <input class="input-register" type="password" name="pwd" placeholder="Mot de passe" required>
 
-        <button type="submit">Créer mon compte</button>
+        <button class="btn-register" type="submit">Créer mon compte</button>
     </form>
 
     <?php if ($message !== "") echo "<p>$message</p>"; ?>
 
-    <a href="http://localhost:8000/?page=login">Déjà un compte ?</a>
+    <a class="a-register" href="http://localhost:8000/?page=login">Déjà un compte ?</a>
 </section>

@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 echo "<p>Connexion réussie ! Redirection en cours...</p>";
                 echo "<script>
                     setTimeout(function(){
-                        window.location.href = 'http://localhost:8000/?page=dashboard';
+                        window.location.href = 'http://localhost/?page=dashboard';
                     }, 1500);
                 </script>";
                 exit();
@@ -49,25 +49,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-
 <section class="container-login">
     <div class="logo-login">
         <img src="/assets/images/Logo.png" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
     </div>
 
-    <form action="#" method="POST">
-        <h2>Connexion</h2>
-        <input type="email" name="userEmail" placeholder="Votre email" required value="<?= htmlspecialchars($_POST['userEmail'] ?? '') ?>">
-        <input type="password" name="userPwd" placeholder="Votre mot de passe" required>
-        <button type="submit">Se connecter</button>
+    <form action="#" method="POST" class="form-login">
+        <h2 class="h2-login">Connexion</h2>
+        <input class="input-login" type="email" name="userEmail" placeholder="Votre email" required value="<?= htmlspecialchars($_POST['userEmail'] ?? '') ?>">
+        <input class="input-login" type="password" name="userPwd" placeholder="Votre mot de passe" required>
+        <button type="submit" class="btn-connecter-login">Se connecter</button>
     </form>
 
     <a href="http://localhost:8000/?page=register">
-        <button class="register-btn">Créer mon compte</button>
+        <button class="register-btn-login">Créer mon compte</button>
     </a>
 
     <a href="http://localhost:8000/?page=pwdForget">
-        <p class="pwd-user-btn">Mot de passe oublié ?</p>
+        <p class="pwd-user-btn-login">Mot de passe oublié ?</p>
     </a>
 
     <?php if ($message !== "") { echo "<p>$message</p>"; }?>
