@@ -1,16 +1,6 @@
 
 
-        .app-container {
-            width: 100%;
-            max-width: 414px; 
-            background-color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            padding-bottom: 80px; /* Espace pour la navbar */
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
-        }
+
 
         /* --- FILTRES (CHIPS) --- */
         .filters-scroll {
