@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['age'] = $user['age'];
                 $_SESSION['roles'] = $roles['name'];
-                var_dump($_SESSION['roles']);
                 $_SESSION['promo_id'] = $user['promo_id'];
 
                 echo "<p>Connexion réussie ! Redirection en cours...</p>";
