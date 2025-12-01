@@ -20,7 +20,7 @@ echo $_SESSION['firstName'];
 
 <p>votre nom actuelle est :</p>
 <?php
-echo $_SESSION['Name'];
+echo $_SESSION['name'];
 ?>
 <a href="?page=modifyName"> modifier le nom</a>
 
