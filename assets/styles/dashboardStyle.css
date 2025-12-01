@@ -2,7 +2,7 @@
 
         .app-container {
             width: 100%;
-            max-width: 414px; /* iPhone Max width */
+            max-width: 414px; 
             background-color: #ffffff;
             min-height: 100vh;
             display: flex;

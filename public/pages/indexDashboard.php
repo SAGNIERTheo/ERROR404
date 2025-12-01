@@ -18,7 +18,7 @@ if ($nextEvent) {
     $heroImage = $nextEvent['image'];
     $heroTitle = $nextEvent['name'];
 } else {
-    // Une image générique si rien n'est prévu et title
+    // Une image par défaulkt si rien n'est prévu et title
     $heroImage = "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"; 
     $heroTitle = "Aucun événement à venir";
 }
@@ -109,20 +109,20 @@ if ($nextEvent) {
         <!-- div à répéter selons le nombres d'evenement inscrits pour l'utilisateur -->
                 <div class="event-card">
                     <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="event-img" alt="Drink">
-                    <div class="event-brand">Brand</div>
+                    <div class="event-brand">Error404</div>
                     <div class="event-name">Cocktail Class</div>
                 </div>
 
         <!-- Exemple en attendant la logique php -->
         <div class="event-card">
             <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="event-img" alt="Party">
-            <div class="event-brand">Brand</div>
+            <div class="event-brand">Error404</div>
             <div class="event-name">Afterwork</div>
         </div>
 
         <div class="event-card">
             <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="event-img" alt="Music">
-            <div class="event-brand">Brand</div>
+            <div class="event-brand">Error404</div>
             <div class="event-name">Live Music</div>
         </div>
     </div>
