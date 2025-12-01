@@ -25,6 +25,7 @@ $routes = [
     'modifyName'      => 'public/includes/user/profil/modifyName.php',
     'modifyFirstName' => 'public/includes/user/profil/modifyFirstName.php',
     'modifyPwd'       => 'public/includes/user/profil/modifyPwd.php',
+    'modifyProfil'    => 'public/pages/indexUser.php'
 
 ];
 
@@ -48,6 +49,7 @@ $privatePages = [
         'modifyName',
         'modifyFirstName',
         'modifyPwd',
+        'modifyProfil'
 
 ];
 
