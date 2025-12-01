@@ -49,6 +49,7 @@ $privatePages = [
         'modifyName',
         'modifyFirstName',
         'modifyPwd',
+        'modifyProfil'
 
 ];
 
