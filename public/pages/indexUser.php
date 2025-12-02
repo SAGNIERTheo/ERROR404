@@ -26,3 +26,5 @@ echo $_SESSION['name'];
 
 
 <a href="?page=modifyPwd"> modifier le mot de passe </a>
+
+<a href="?page="></a>

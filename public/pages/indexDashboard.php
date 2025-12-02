@@ -35,10 +35,6 @@ if ($nextEvent) {
     <!-- FILTRES (ça filtre les events et notifs en fonctions de ce qu'ils veulent) -->
     <div class="filters-scroll">
         <div class="chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            Favoris
-        </div>
-        <div class="chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             Historique
         </div>
@@ -53,6 +49,7 @@ if ($nextEvent) {
     </div>
 
     <!-- Mise en avant du prochain event BDE -->
+     <a href="?page=events">
     <div class="hero-section">
         <div class="hero-card">
             <!-- insertion de la variable $heroImage avec htmlspe... car lien dans la base de donnée -->
@@ -66,6 +63,7 @@ if ($nextEvent) {
             </div>
         </div>
     </div>
+    </a>
 
     <!-- ACTIVITÉS / NOTIFS -->
     <div class="activity-list">
