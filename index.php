@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+
+
 require_once __DIR__ . '/config/BDD/db.php';
 
 // Page par défaut : Homepage
@@ -24,7 +26,7 @@ $routes = [
     'modifyFirstName' => 'public/includes/user/profil/modifyFirstName.php',
     'modifyPwd'       => 'public/includes/user/profil/modifyPwd.php',
     'modifyProfil'    => 'public/pages/indexUser.php',
-    'detailEvent'     => 'public/pages/detailEvent.php' // Vérifie que ce fichier existe bien ici
+    'detailEvent'     => 'public/pages/detailEvent.php'
 ];
 
 // Sécurité : page inexistante = erreur 404
@@ -49,6 +51,7 @@ $privatePages = [
         'modifyPwd',
         'modifyProfil',
         'detailEvent'
+        
 ];
 
 if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
@@ -66,23 +69,21 @@ if (in_array($page, $adminPages)) {
     }
 }
 
-// chargement du style avant chargement des pages
+require $routes[$page];
+
 ?>
-<!DOCTYPE html>
-<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web App</title>
-    <link rel="stylesheet" href="./assets/styles/styles.css">
-    <link rel="stylesheet" href="./assets/styles/dashboardStyle.css">
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link rel="stylesheet" href="/assets/styles/dashboardStyle.css">
 </head>
-<body>
 
-    <?php
-    // chargement de la page
-    require $routes[$page];
-    ?>
+<!-- Mettre en place un title Head dynamique avec js (voir doc internet) 
+<head>
+    <title>Dashboard</title>
+</head>
 
-</body>
-</html>
+-->
+    
