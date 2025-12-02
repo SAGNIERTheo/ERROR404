@@ -27,6 +27,7 @@ $routes = [
     'modifyPwd'       => 'public/includes/user/profil/modifyPwd.php',
     'modifyProfil'    => 'public/pages/indexUser.php',
     'detailEvent'     => 'public/pages/detailEvent.php'
+
 ];
 
 // Sécurité : page inexistante = erreur 404
@@ -59,6 +60,9 @@ if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
     exit;
 }
 
+
+/* A REMETTRE 
+
 // Pages accessibles uniquement par admin
 $adminPages = ['admin'];
 
@@ -69,15 +73,18 @@ if (in_array($page, $adminPages)) {
     }
 }
 
-require $routes[$page];
+*/
 
+// chargement du style avant chargement des pages
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/styles/styles.css">
-    <link rel="stylesheet" href="/assets/styles/dashboardStyle.css">
+    <title>My Web App</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="stylesheet" href="./assets/styles/dashboardStyle.css">
+    <link rel="stylesheet" href="./assets/styles/adminStyle.css">
 </head>
 
 <!-- Mettre en place un title Head dynamique avec js (voir doc internet) 
