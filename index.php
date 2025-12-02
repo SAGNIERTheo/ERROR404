@@ -24,7 +24,8 @@ $routes = [
     'modifyFirstName' => 'public/includes/user/profil/modifyFirstName.php',
     'modifyPwd'       => 'public/includes/user/profil/modifyPwd.php',
     'modifyProfil'    => 'public/pages/indexUser.php',
-    'detailEvent'     => 'public/pages/detailEvent.php' // Vérifie que ce fichier existe bien ici
+    'detailEvent'     => 'public/pages/detailEvent.php'
+
 ];
 
 // Sécurité : page inexistante = erreur 404
@@ -56,6 +57,9 @@ if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
     exit;
 }
 
+
+/* A REMETTRE 
+
 // Pages accessibles uniquement par admin
 $adminPages = ['admin'];
 
@@ -65,6 +69,8 @@ if (in_array($page, $adminPages)) {
         exit;
     }
 }
+
+*/
 
 // chargement du style avant chargement des pages
 ?>
@@ -76,6 +82,7 @@ if (in_array($page, $adminPages)) {
     <title>My Web App</title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/dashboardStyle.css">
+    <link rel="stylesheet" href="./assets/styles/adminStyle.css">
 </head>
 <body>
 
