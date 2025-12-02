@@ -1,6 +1,8 @@
 <?php
 
+// Assure-toi que $pdo est bien défini avant ce fichier
 $promos = $pdo->query("SELECT id, name FROM promo")->fetchAll(PDO::FETCH_ASSOC);
+$message = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -10,30 +12,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email      = trim($_POST['email']);
     $age        = !empty($_POST['age']) ? $_POST['age'] : null; 
     $pwd        = $_POST['pwd'];
-    $promoId = $_POST['promo'] ?? null;
+    $confirmPwd = $_POST['confirm_pwd'];
+    $promoId    = $_POST['promo'] ?? null;
+
+    // regex : Au moins 1 Maj, 1 Chiffre, 1 Spécial, Min 8 caractères
+    $regexPwd = '/^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/';
+
     if (
         empty($pseudo) || empty($name) || empty($firstname) ||
-        empty($email) || empty($pwd) || empty($promoId)
+        empty($email) || empty($pwd) || empty($confirmPwd) || empty($promoId)
     ) {
         $message = "Veuillez remplir tous les champs obligatoires.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $message = "Adresse email invalide.";
+    } elseif ($pwd !== $confirmPwd) { 
+        $message = "Les mots de passe ne correspondent pas.";
+    } elseif (!preg_match($regexPwd, $pwd)) {
+        // MESSAGE MIS À JOUR
+        $message = "Le mot de passe doit faire 8 caractères minimum, contenir au moins une majuscule, un chiffre et un caractère spécial.";
     } else {
         try {
-            // Vérifier si l'email existe déjà
             $check = $pdo->prepare("SELECT id FROM user WHERE email = ?");
             $check->execute([$email]);
 
             if ($check->rowCount() > 0) {
-
                 $message = "Cet email est déjà utilisé.";
-
             } else {
-
-                // HASH DU MOT DE PASSE
                 $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-                // Rôle forcé USER = 2
                 $roleId = 2;
 
                 $insert = $pdo->prepare("
@@ -43,17 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 ");
 
                 $insert->execute([
-                    $pseudo,
-                    $name,
-                    $firstname,
-                    $email,
-                    $hashPwd,   // ✅ ICI le hash
-                    $age,       // ✅ ICI l’âge
-                    $roleId,
-                    $promoId
+                    $pseudo, $name, $firstname, $email, $hashPwd, $age, $roleId, $promoId
                 ]);
 
-                echo "<p>Compte créé avec succès ! Redirection...</p>";
+
+
+                echo "<p style='color:green'>Compte créé avec succès ! Redirection...</p>";
                 echo "<script>
                     setTimeout(function(){
                         window.location.href = 'http://localhost:8000/?page=dashboard';
@@ -61,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </script>";
                 exit();
             }
-
         } catch(PDOException $e) {
             $message = "Erreur serveur : " . $e->getMessage();
         }
@@ -72,29 +71,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h2>Créer un compte</h2>
 
     <form method="POST">
-        <input type="text" name="pseudo" placeholder="Pseudo" required>
-        <input type="text" name="name" placeholder="Nom" required>
-        <input type="text" name="firstname" placeholder="Prénom" required>
-        <input type="email" name="email" placeholder="Email" required>
-
-        <input type="number" name="age" placeholder="Âge (optionnel)">
-
-        <!-- ✅ SELECT PROMO DYNAMIQUE -->
+        <input type="text" name="pseudo" placeholder="Pseudo" value="<?= isset($_POST['pseudo']) ? htmlspecialchars($_POST['pseudo']) : '' ?>" required>
+        <input type="text" name="name" placeholder="Nom" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>" required>
+        <input type="text" name="firstname" placeholder="Prénom" value="<?= isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname']) : '' ?>" required>
+        <input type="email" name="email" placeholder="Email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
+        <input type="number" name="age" placeholder="Âge (optionnel)" value="<?= isset($_POST['age']) ? htmlspecialchars($_POST['age']) : '' ?>">
         <select name="promo" required>
             <option value="">-- Sélectionnez votre promo --</option>
             <?php foreach ($promos as $promo): ?>
-                <option value="<?= $promo['id'] ?>">
+                <option value="<?= $promo['id'] ?>" <?= (isset($_POST['promo']) && $_POST['promo'] == $promo['id']) ? 'selected' : '' ?>>
                     <?= htmlspecialchars($promo['name']) ?>
                 </option>
             <?php endforeach; ?>
         </select>
 
         <input type="password" name="pwd" placeholder="Mot de passe" required>
+        
+        <small style="display:block; margin-bottom:10px; color:#666; font-size: 0.8em;">
+            Min. 8 caractères, 1 majuscule, 1 chiffre, 1 caractère spécial.
+        </small>
+
+        <input type="password" name="confirm_pwd" placeholder="Confirmer le mot de passe" required>
 
         <button type="submit">Créer mon compte</button>
     </form>
 
-    <?php if ($message !== "") echo "<p>$message</p>"; ?>
+    <?php if (!empty($message)) echo "<p style='color:red; font-weight:bold;'>$message</p>"; ?>
 
     <a href="http://localhost:8000/?page=login">Déjà un compte ?</a>
 </section>
