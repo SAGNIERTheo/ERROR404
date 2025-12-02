@@ -1,2 +1,6 @@
-<h2> Admin </h2>
 <?php
+
+?>
+
+<h2> Admin </h2>
+
