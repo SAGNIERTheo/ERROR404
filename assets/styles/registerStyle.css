@@ -3,6 +3,7 @@
     .container-register {
         width: 100%;
         max-width: 414px;
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -15,11 +16,14 @@
     }
 
     /* Logo */
-    .logo-register img {
+    .logo-register{
+        margin: 10px 0;
+    }
+
+    .logo-register img{
         width: 80%;
         height: auto;
         border-radius: 8px;
-        margin-bottom: -10px;
     }
 
     /* Titre */

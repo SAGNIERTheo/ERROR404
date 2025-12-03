@@ -23,14 +23,14 @@
 }
 
 /* Formulaire */
-form {
+.container-login form {
     width: 100%;
     max-width: 350px;
     text-align: center;
     gap: 1rem;
 }
 
-form h2 {
+.container-login form h2 {
     color: var(--noir);
     margin-bottom: 1.5rem;
 }
@@ -77,7 +77,7 @@ form h2 {
 }
 
 /* Bouton inscription */
-a {
+.container-login a {
     color: #f1f1f1f1;
     text-align: center;
     text-decoration: none;
