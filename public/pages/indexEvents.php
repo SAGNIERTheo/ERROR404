@@ -73,4 +73,6 @@
 
     <?php endif; ?>
 
+    <div class="bottom-spacer"></div>
+
 </section>

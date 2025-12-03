@@ -99,6 +99,9 @@ if (in_array($page, $adminPages)) {
     <link rel="stylesheet" href="./assets/styles/dashboardStyle.css">
     <link rel="stylesheet" href="./assets/styles/adminStyle.css">
 
+
+    <link rel="stylesheet" href="./assets/styles/alertStyle.css">
+
 </head>
 <body>
     <?php
