@@ -1,3 +1,5 @@
+    /* Dashboard Admin */
+    
     .admin-wrapper {
         display: flex;
         height: 100vh;
@@ -204,4 +206,175 @@
     .admin-hero-title {
         font-size: 28px;
         font-weight: 700;
+    }
+
+        /* Event Admin */
+    
+    .admin-section-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .admin-table-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        overflow: hidden; /* Pour les coins arrondis */
+        border: 1px solid #E0E0E0;
+    }
+
+    .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .admin-table th {
+        background-color: #F9FAFB;
+        text-align: left;
+        padding: 15px 20px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #6B7280;
+        text-transform: uppercase;
+        border-bottom: 1px solid #E0E0E0;
+    }
+
+    .admin-table td {
+        padding: 15px 20px;
+        border-bottom: 1px solid #F0F0F0;
+        font-size: 14px;
+        color: #333;
+        vertical-align: middle;
+    }
+
+    .admin-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .admin-table tr:hover {
+        background-color: #FAFAFA;
+    }
+
+    /* Cellule Event (Image + Nom) */
+    .event-cell {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .event-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: cover;
+        background-color: #eee;
+    }
+
+    .event-name {
+        font-weight: 600;
+        color: #111;
+    }
+
+    /* Actions */
+    .action-btn {
+        padding: 6px 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 5px;
+        transition: opacity 0.2s;
+    }
+
+    .btn-edit { background-color: #EFF6FF; color: #1D4ED8; }
+    .btn-delete { background-color: #FEF2F2; color: #DC2626; }
+    
+    .action-btn:hover { opacity: 0.8; }
+    
+    .badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+    .badge-upcoming { background-color: #ECFDF5; color: #059669; }
+    .badge-past { background-color: #F3F4F6; color: #6B7280; }
+
+    /* Admin add event */
+        .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        border: 1px solid #E0E0E0;
+        max-width: 800px;
+        margin: 0 auto; /* Centré */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .form-input, .form-textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.2s;
+        background-color: #FAFAFA;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+        border-color: #0044FF;
+        outline: none;
+        background-color: #fff;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .form-col {
+        flex: 1;
+    }
+
+    .btn-submit {
+        background-color: #0044FF;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 10px;
+        transition: background 0.2s;
+    }
+    .btn-submit:hover { background-color: #0033cc; }
+
+    .btn-cancel {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        color: #666;
+        text-decoration: none;
+        font-size: 14px;
     }
