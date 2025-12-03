@@ -1,0 +1,83 @@
+
+/* Conteneur global */
+.profile-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Rendre tous les liens/boutons la même largeur et centrés */
+.profile-container a {
+    width: 100%;
+    max-width: 300px; /* largeur visuelle identique pour tous les boutons */
+    display: block;
+    margin: 0.8rem auto 0; /* espace vertical entre chaque bouton */
+    text-decoration: none; /* pas de soulignement */
+}
+
+/* Logo */
+.logo-profile img {
+    width: 160px;
+    height: auto;
+    margin-bottom: 50px;
+    gap: 1rem;
+    border-radius: 999px;
+}
+
+.h2-profile {
+    color: var(--noir);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+/* Style de base commun aux boutons */
+.btn-profile-bleu,
+.btn-profile-noir {
+    display: flex; /* pour aligner le texte et la flèche */
+    align-items: center;
+    justify-content: space-between; /* texte à gauche, flèche à droite */
+    width: 100%;
+    padding: 14px 16px; /* padding identique pour tous les boutons */
+    border: none;
+    border-radius: 99px;
+    color: #f1f1f1f1;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Boutons bleu */
+.btn-profile-bleu {
+    background: var(--bleu);
+}
+.btn-profile-bleu:hover {
+    background: var(--noir);
+    transform: translateY(-1px);
+}
+
+/* Boutons noir */
+.btn-profile-noir {
+    background: var(--noir);
+}
+.btn-profile-noir:hover {
+    background: var(--bleu); /* léger foncé au survol */
+    transform: translateY(-1px);
+}
+
+/* Flèche cliquable à droite (fait partie du bouton) */
+.btn-profile-bleu::after,
+.btn-profile-noir::after {
+    content: "\2192"; /* → */
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-left: 12px;
+    transition: transform 0.2s ease;
+}
+.btn-profile-bleu:hover::after,
+.btn-profile-noir:hover::after {
+    transform: translateX(4px);
+}
