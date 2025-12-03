@@ -26,7 +26,14 @@ $routes = [
     'modifyFirstName' => 'public/includes/user/profil/modifyFirstName.php',
     'modifyPwd'       => 'public/includes/user/profil/modifyPwd.php',
     'modifyProfil'    => 'public/pages/indexUser.php',
-    'detailEvent'     => 'public/pages/detailEvent.php'
+    'detailEvent'     => 'public/pages/detailEvent.php',
+    'adminEvents'     => 'public/pages/indexEventAdmin.php',
+    'adminMessages'   => 'public/pages/indexMessageAdmin.php',
+    'adminUsers'      => 'public/pages/indexUserAdmin.php',
+    'addEventAdmin'   => 'public/pages/addEventAdmin.php',
+    'editEventAdmin'  => 'public/pages/editEventAdmin.php',
+    'deleteEventAdmin' => 'public/includes/admin/deleteEventAdmin.php',
+    'deleteUserAdmin' => 'public/includes/admin/deleteUserAdmin.php',
 
 ];
 
@@ -51,8 +58,14 @@ $privatePages = [
         'modifyFirstName',
         'modifyPwd',
         'modifyProfil',
-        'detailEvent'
-        
+        'detailEvent',
+        'adminEvents',
+        'adminMessages',
+        'adminUsers',
+        'addEventAdmin',
+        'editEventAdmin',
+        'deleteEventAdmin',
+
 ];
 
 if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
@@ -61,19 +74,19 @@ if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
 }
 
 
-/* A REMETTRE 
+
 
 // Pages accessibles uniquement par admin
-$adminPages = ['admin'];
+$adminPages = ['admin', 'adminEvents', 'adminMessages', 'adminUsers', 'addEventAdmin', 'editEventAdmin', 'deleteEventAdmin'];
 
 if (in_array($page, $adminPages)) {
     if (!isset($_SESSION['id']) || $_SESSION['roles'] !== 'admin') {
-        header('Location: ?page=admin');
+        header('Location: ?page=dashboard');
         exit;
     }
 }
 
-*/
+
 
 // chargement du style avant chargement des pages
 ?>
@@ -90,11 +103,10 @@ if (in_array($page, $adminPages)) {
 
 </head>
 
-<!-- Mettre en place un title Head dynamique avec js (voir doc internet) 
-<head>
-    <title>Dashboard</title>
 </head>
-
--->
+<body>
     <?php
-include_once $routes[$page];
+    include_once $routes[$page];
+    ?>
+</body>
+    
