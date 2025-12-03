@@ -34,6 +34,7 @@ $routes = [
     'editEventAdmin'  => 'public/pages/editEventAdmin.php',
     'deleteEventAdmin' => 'public/includes/admin/deleteEventAdmin.php',
     'deleteUserAdmin' => 'public/includes/admin/deleteUserAdmin.php',
+    'organigrammeBDE' => 'public/pages/orgaBde.php',
 
 ];
 
@@ -65,6 +66,7 @@ $privatePages = [
         'addEventAdmin',
         'editEventAdmin',
         'deleteEventAdmin',
+        'organigrammeBDE',
 
 ];
 
