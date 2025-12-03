@@ -103,6 +103,9 @@ if (in_array($page, $adminPages)) {
 
 </head>
 
+
+    <link rel="stylesheet" href="./assets/styles/alertStyle.css">
+
 </head>
 <body>
     <?php
