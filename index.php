@@ -81,10 +81,13 @@ if (in_array($page, $adminPages)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web App</title>
+    <title>ERROR404</title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/dashboardStyle.css">
     <link rel="stylesheet" href="./assets/styles/adminStyle.css">
+    <link rel="stylesheet" href="./assets/styles/loginStyle.css">
+    <link rel="stylesheet" href="./assets/styles/registerStyle.css">
+
 </head>
 
 <!-- Mettre en place un title Head dynamique avec js (voir doc internet) 
@@ -93,4 +96,5 @@ if (in_array($page, $adminPages)) {
 </head>
 
 -->
-    
+    <?php
+include_once $routes[$page];
