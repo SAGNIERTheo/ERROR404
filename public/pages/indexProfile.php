@@ -16,6 +16,9 @@ include_once './public/includes/nav.php';
 <a href="?page=#">
     <button>Mes aniens évènements</button>
 </a>
+<a href="?page=#">
+    <button>Organigramme BDE</button>
+</a>
 <a href="?page=logout">
     <button>Se déconnecter</button>
 </a>
