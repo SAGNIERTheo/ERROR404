@@ -31,6 +31,9 @@ $routes = [
     'adminMessages'   => 'public/pages/indexMessageAdmin.php',
     'adminUsers'      => 'public/pages/indexUserAdmin.php',
     'addEventAdmin'   => 'public/pages/addEventAdmin.php',
+    'editEventAdmin'  => 'public/pages/editEventAdmin.php',
+    'deleteEventAdmin' => 'public/includes/admin/deleteEventAdmin.php',
+    'deleteUserAdmin' => 'public/includes/admin/deleteUserAdmin.php',
 
 ];
 
@@ -60,6 +63,8 @@ $privatePages = [
         'adminMessages',
         'adminUsers',
         'addEventAdmin',
+        'editEventAdmin',
+        'deleteEventAdmin',
 
 ];
 
@@ -69,19 +74,19 @@ if (in_array($page, $privatePages) && !isset($_SESSION['id'])) {
 }
 
 
-/* A REMETTRE 
+
 
 // Pages accessibles uniquement par admin
-$adminPages = ['admin', 'adminEvents', 'adminMessages', 'adminUsers', 'addEventAdmin'];
+$adminPages = ['admin', 'adminEvents', 'adminMessages', 'adminUsers', 'addEventAdmin', 'editEventAdmin', 'deleteEventAdmin'];
 
 if (in_array($page, $adminPages)) {
     if (!isset($_SESSION['id']) || $_SESSION['roles'] !== 'admin') {
-        header('Location: ?page=admin');
+        header('Location: ?page=dashboard');
         exit;
     }
 }
 
-*/
+
 
 // chargement du style avant chargement des pages
 ?>

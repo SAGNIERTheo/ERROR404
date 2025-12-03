@@ -1,48 +1,125 @@
+<?php
+// Récupération de tous les utilisateurs AVEC le nom de leur promo
+// On utilise u.* pour tout user et p.name pour le nom de la promo
+$sql = "SELECT u.*, p.name AS promo_name 
+        FROM user u 
+        LEFT JOIN promo p ON u.promo_id = p.id 
+        ORDER BY u.id DESC";
+
+$stmt = $pdo->query($sql);
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<style>
+    /* CSS LOCAL SPÉCIFIQUE */
+    /* Les styles globaux sont dans adminStyle.css */
+
+    .user-avatar-small {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #ddd;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #555;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    /* Couleurs spécifiques aux badges rôles */
+    .role-admin { background-color: #FEE2E2; color: #DC2626; } /* Rouge */
+    .role-user { background-color: #EFF6FF; color: #1D4ED8; }  /* Bleu */
+    
+    /* Couleur spécifique badge promo (Gris) */
+    .badge-promo { background-color: #F3F4F6; color: #4B5563; font-weight: 600; }
+</style>
+
 <div class="admin-wrapper">
 
-    <nav class="admin-sidebar">
-        <div class="admin-logo">ERROR 404</div>
-
-        <ul class="admin-menu-list">
-            <li class="admin-menu-item">
-                <a href="?page=admin" class="admin-menu-link">
-                    <svg class="admin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    Dashboard
-                </a>
-            </li>
-            <li class="admin-menu-item">
-                <a href="?page=adminEvents" class="admin-menu-link">
-                    <svg class="admin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                    Évènements
-                </a>
-            </li>
-            <li class="admin-menu-item">
-                <a href="?page=adminMessages" class="admin-menu-link">
-                    <svg class="admin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    Messagerie
-                </a>
-            </li>
-            <li class="admin-menu-item">
-                <!-- Lien Actif -->
-                <a href="?page=adminUsers" class="admin-menu-link active">
-                    <svg class="admin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Utilisateurs
-                </a>
-            </li>
-        </ul>
-
-        <div class="admin-sidebar-profile">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Axelle" class="admin-profile-pic">
-            <div class="admin-profile-name">Axelle</div>
-        </div>
-    </nav>
+    <!-- SIDEBAR -->
+    <?php include 'public/includes/admin/adminSideBar.php'; ?>
 
     <main class="admin-main-content">
         <div class="admin-top-bar">
-            <h2 class="admin-page-title">Gestion des utilisateurs</h2>
+            <h2 class="admin-page-title">Gestion des Utilisateurs</h2>
         </div>
         
-        <!-- Contenu à venir -->
+        <h3 class="admin-section-title">
+            Liste des inscrits (<?= count($users) ?>)
+        </h3>
+
+        <div class="admin-table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Utilisateur</th>
+                        <th>Email</th>
+                        <th>Promo</th> <!-- ✅ Nouvelle colonne -->
+                        <th>Rôle</th>
+                        <th style="text-align:right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(empty($users)): ?>
+                        <tr><td colspan="5" style="text-align:center; color:#999; padding:30px;">Aucun utilisateur trouvé</td></tr>
+                    <?php else: ?>
+                        <?php foreach($users as $user): ?>
+                        <tr>
+                            <td>
+                                <div style="display:flex; align-items:center;">
+                                    <!-- Avatar avec la première lettre du pseudo -->
+                                    <div class="user-avatar-small">
+                                        <?= strtoupper(substr($user['pseudo'], 0, 1)) ?>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight:600;"><?= htmlspecialchars($user['pseudo']) ?></div>
+                                        <div style="font-size:12px; color:#888;">
+                                            <?= htmlspecialchars($user['firstName'] . ' ' . $user['name']) ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><?= htmlspecialchars($user['email']) ?></td>
+                            
+
+                            <td>
+                                <?php if(!empty($user['promo_name'])): ?>
+                                    <span class="badge badge-promo"><?= htmlspecialchars($user['promo_name']) ?></span>
+                                <?php else: ?>
+                                    <span style="color:#ccc; font-size:12px;">Sans promo</span>
+                                <?php endif; ?>
+                            </td>
+
+
+                            <td>
+
+                                <?php if($user['roles_id'] == 1): ?>
+                                    <span class="badge role-admin">Admin</span>
+                                <?php else: ?>
+                                    <span class="badge role-user">User</span>
+                                <?php endif; ?>
+                            </td>
+
+                            <td style="text-align:right">
+                                <?php if($user['id'] != $_SESSION['id']): ?>
+                                    <a href="?page=deleteUserAdmin&id=<?= $user['id'] ?>" 
+                                       class="action-btn btn-delete"
+                                       onclick="return confirm('Attention : supprimer cet utilisateur est définitif. Confirmer ?');">
+                                       Supprimer
+                                    </a>
+                                <?php else: ?>
+                                    <span style="font-size:12px; color:#999;">(Vous)</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+
     </main>
 
 </div>
