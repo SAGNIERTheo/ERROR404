@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e4444bed-d950-4e6f-a0c3-3898b8c31a34" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/images/WhatsApp Image 2025-12-02 à 10.51.17_28f45304.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/logo1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/WhatsApp Image 2025-12-02 à 10.51.17_c1378908.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/logo2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/includes/user/login_logout/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/includes/user/login_logout/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/includes/user/login_logout/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/includes/user/login_logout/register.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SAGNIERTheo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SAGNIERTheo/ERROR404.git",
+    "accountId": "32c94976-248d-44b4-a6d9-90d7dec4c18f"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="36KNWbJ1rATqdRfXhpLygWADzvE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "git-widget-placeholder": "develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/theos/PhpstormProjects/BDE app/assets/images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\theos\PhpstormProjects\BDE app\assets\images" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PS-252.26830.95" />
+        <option value="bundled-php-predefined-a98d8de5180a-9b563d34894c-com.jetbrains.php.sharedIndexes-PS-252.26830.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4444bed-d950-4e6f-a0c3-3898b8c31a34" name="Changes" comment="" />
+      <created>1764751336119</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764751336119</updated>
+      <workItem from="1764751337251" duration="11550000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
