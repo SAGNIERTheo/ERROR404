@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 <section class="container-register">
     <div class="logo-register">
-        <img src="./assets/images/logo2.jpg" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
+        <img src="./assets/images/logo1.jpg" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
     </div>
 
     <h2  class="h2-register">Créer un compte</h2>

@@ -19,3 +19,7 @@
             padding-bottom: 80px; /* Espace pour la navbar */
             box-shadow: 0 0 20px rgba(0,0,0,0.05);
         }
+
+        img{
+            width: 100%;
+        }
