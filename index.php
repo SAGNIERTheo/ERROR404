@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+
+
 require_once __DIR__ . '/config/BDD/db.php';
 
 // Page par défaut : Homepage
@@ -83,8 +85,7 @@ if (in_array($page, $adminPages)) {
 
 // chargement du style avant chargement des pages
 ?>
-<!DOCTYPE html>
-<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,12 +95,11 @@ if (in_array($page, $adminPages)) {
     <link rel="stylesheet" href="./assets/styles/adminStyle.css">
 
 </head>
-<body>
 
-    <?php
-    // chargement de la page
-    require $routes[$page];
-    ?>
+<!-- Mettre en place un title Head dynamique avec js (voir doc internet) 
+<head>
+    <title>Dashboard</title>
+</head>
 
-</body>
-</html>
+-->
+    
