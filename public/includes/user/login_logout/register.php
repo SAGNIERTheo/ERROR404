@@ -67,16 +67,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-<section class="container-login">
-    <h2>Créer un compte</h2>
+<section class="container-register">
+    <div class="logo-register">
+        <img src="./assets/images/WhatsApp%20Image%202025-12-02%20à%2010.51.17_28f45304.jpg" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
+    </div>
 
-    <form method="POST">
-        <input type="text" name="pseudo" placeholder="Pseudo" value="<?= isset($_POST['pseudo']) ? htmlspecialchars($_POST['pseudo']) : '' ?>" required>
-        <input type="text" name="name" placeholder="Nom" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>" required>
-        <input type="text" name="firstname" placeholder="Prénom" value="<?= isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname']) : '' ?>" required>
-        <input type="email" name="email" placeholder="Email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
-        <input type="number" name="age" placeholder="Âge (optionnel)" value="<?= isset($_POST['age']) ? htmlspecialchars($_POST['age']) : '' ?>">
-        <select name="promo" required>
+    <h2  class="h2-register">Créer un compte</h2>
+
+    <form class="form-register" method="POST">
+        <input class="input-register" type="text" name="pseudo" placeholder="Pseudo" value="<?= isset($_POST['pseudo']) ? htmlspecialchars($_POST['pseudo']) : '' ?>" required>
+        <input class="input-register" type="text" name="name" placeholder="Nom" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>" required>
+        <input class="input-register" type="text" name="firstname" placeholder="Prénom" value="<?= isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname']) : '' ?>" required>
+        <input class="input-register" type="email" name="email" placeholder="Email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
+        <input class="input-register" type="number" name="age" placeholder="Âge (optionnel)" value="<?= isset($_POST['age']) ? htmlspecialchars($_POST['age']) : '' ?>">
+        <select class="select-register" name="promo" required>
             <option value="">-- Sélectionnez votre promo --</option>
             <?php foreach ($promos as $promo): ?>
                 <option value="<?= $promo['id'] ?>" <?= (isset($_POST['promo']) && $_POST['promo'] == $promo['id']) ? 'selected' : '' ?>>
@@ -85,18 +89,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <?php endforeach; ?>
         </select>
 
-        <input type="password" name="pwd" placeholder="Mot de passe" required>
+        <input class="input-pwd-register" type="password" name="pwd" placeholder="Mot de passe" required>
         
-        <small style="display:block; margin-bottom:10px; color:#666; font-size: 0.8em;">
+        <small class="form-register small" style="display:block; margin-bottom:10px; color:#666; font-size: 0.8em;">
             Min. 8 caractères, 1 majuscule, 1 chiffre, 1 caractère spécial.
         </small>
 
-        <input type="password" name="confirm_pwd" placeholder="Confirmer le mot de passe" required>
+        <input class="input-pwd-registerConfirm" type="password" name="confirm_pwd" placeholder="Confirmer le mot de passe" required>
 
-        <button type="submit">Créer mon compte</button>
+        <button class="register-btn" type="submit">Créer mon compte</button>
     </form>
 
     <?php if (!empty($message)) echo "<p style='color:red; font-weight:bold;'>$message</p>"; ?>
 
-    <a href="http://localhost:8000/?page=login">Déjà un compte ?</a>
+    <a class="a-register" href="http://localhost:8000/?page=login">Déjà un compte ?</a>
 </section>

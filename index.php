@@ -98,6 +98,10 @@ if (in_array($page, $adminPages)) {
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/dashboardStyle.css">
     <link rel="stylesheet" href="./assets/styles/adminStyle.css">
+    <link rel="stylesheet" href="./assets/styles/loginStyle.css">
+    <link rel="stylesheet" href="./assets/styles/registerStyle.css">
+
+</head>
 
 </head>
 <body>
