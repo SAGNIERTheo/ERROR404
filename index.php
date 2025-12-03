@@ -95,11 +95,9 @@ if (in_array($page, $adminPages)) {
     <link rel="stylesheet" href="./assets/styles/adminStyle.css">
 
 </head>
-
-<!-- Mettre en place un title Head dynamique avec js (voir doc internet) 
-<head>
-    <title>Dashboard</title>
-</head>
-
--->
+<body>
+    <?php
+    include_once $routes[$page];
+    ?>
+</body>
     
