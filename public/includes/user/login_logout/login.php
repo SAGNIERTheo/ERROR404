@@ -55,21 +55,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <section class="container-login">
     <div class="logo-login">
-        <img src="/assets/images/Logo.png" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
+        <img src="./assets/images/logo2.jpg" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
     </div>
 
-    <form action="#" method="POST">
+    <form action="#" method="POST" >
         <h2>Connexion</h2>
-        <input type="email" name="userEmail" placeholder="Votre email" required value="<?= htmlspecialchars($_POST['userEmail'] ?? '') ?>">
-        <input type="password" name="userPwd" placeholder="Votre mot de passe" required>
-        <button type="submit">Se connecter</button>
+        <input class="input-login" type="email" name="userEmail" placeholder="Votre email" required value="<?= htmlspecialchars($_POST['userEmail'] ?? '') ?>">
+        <input class="input-login" type="password" name="userPwd" placeholder="Votre mot de passe" required>
+        <button class="form-btn-login" type="submit">Se connecter</button>
     </form>
 
-    <a href="http://localhost:8000/?page=register">
+    <a href="?page=register">
         <button class="register-btn">Créer mon compte</button>
     </a>
 
-    <a href="http://localhost:8000/?page=pwdForget">
+    <a href="?page=pwdForget">
         <p class="pwd-user-btn">Mot de passe oublié ?</p>
     </a>
 

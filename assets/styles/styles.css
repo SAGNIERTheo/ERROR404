@@ -19,3 +19,17 @@
             padding-bottom: 80px; /* Espace pour la navbar */
             box-shadow: 0 0 20px rgba(0,0,0,0.05);
         }
+
+        .app-container-orga {
+            width: 100%;
+            max-width: 414px; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 80px; /* Espace pour la navbar */
+        }
+
+        img{
+            width: 100%;
+        }

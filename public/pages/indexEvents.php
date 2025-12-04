@@ -2,8 +2,6 @@
     // Inclusion de la navigation
     include_once './public/includes/nav.php';
 
-    // 1. Préparation de la requête
-    // ✅ MODIFICATION : On ajoute 'id' dans la liste des colonnes à récupérer
     $sql = "SELECT id, name, image, dateStart FROM event
             WHERE dateStart >= NOW() 
             ORDER BY dateStart ASC";
@@ -72,5 +70,7 @@
         <?php endforeach; ?>
 
     <?php endif; ?>
+
+    <div class="bottom-spacer"></div>
 
 </section>

@@ -1,0 +1,110 @@
+
+    /* Conteneur global */
+    .container-register {
+        width: 100%;
+        max-width: 414px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 80px; /* Espace pour la navbar */
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    /* Logo */
+    .logo-register{
+        margin: 10px 0;
+    }
+
+    .logo-register img{
+        width: 80%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Titre */
+    .h2-register {
+        color: var(--noir);
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+
+    /* Formulaire */
+    .form-register {
+        width: 100%;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem; /* Espacement entre les inputs */
+    }
+
+    /* Inputs */
+    .input-register,
+    .select-register,
+    .input-pwd-register,
+    .input-pwd-registerConfirm {
+        width: 100%;
+        padding: 14px 10px;
+        border: 1px solid var(--noir);
+        border-radius: 6px;
+        color: var(--noir);
+        transition: 0.3s;
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+
+    .input-register:focus,
+    .select-register:focus,
+    .input-pwd-register:focus,
+    .input-pwd-registerConfirm:focus {
+        outline: 2px solid var(--bleu);
+    }
+
+    /* Texte aide mdp */
+    .form-register small {
+        margin-top: -5px;
+        color: #666;
+        font-size: 0.8em;
+    }
+
+    /* Bouton Register */
+    .register-btn {
+        width: 100%;
+        padding: 14px;
+        background: var(--bleu);
+        border: none;
+        border-radius: 6px;
+        color: #f1f1f1f1;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: 0.3s;
+        margin-top: 5px;
+    }
+
+    .register-btn:hover {
+        background: var(--noir);
+        transform: scale(1.03);
+    }
+
+    /* Lien Déjà un compte */
+    .a-register {
+        margin-top: 10px;
+        text-decoration: none;
+        color: var(--bleu);
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .a-register:hover {
+        color: var(--noir);
+        text-decoration: underline;
+        gap: -1rem;
+    }
