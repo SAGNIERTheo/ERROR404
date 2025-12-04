@@ -18,22 +18,22 @@ if (!$event) {
 
 $dateEvent = new DateTime($event['dateStart']);
 
-// --- LOGIQUE PARTICIPATION (AJOUTÉE) ---
+
 $userId = $_SESSION['id'] ?? null;
 $isParticipating = false;
 
 if ($userId) {
-    // 1. Vérifier si l'utilisateur participe déjà
+    // Vérifier si l'utilisateur participe déjà
     $checkSql = "SELECT * FROM user_has_event WHERE user_id = ? AND event_id = ?";
     $checkStmt = $pdo->prepare($checkSql);
     $checkStmt->execute([$userId, $eventId]);
     // Si on trouve une ligne, c'est qu'il participe
     $isParticipating = $checkStmt->rowCount() > 0;
 
-    // 2. Traitement du clic sur le bouton
+    // Traitement du clic sur le bouton
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_participation'])) {
         
-        // On récupère les infos complémentaires de l'utilisateur (rôle et promo) requises par ta table pivot
+        // récupère les infos de l'utilisateur (rôle et promo) requises par ta table pivot
         $userSql = "SELECT roles_id, promo_id FROM user WHERE id = ?";
         $userStmt = $pdo->prepare($userSql);
         $userStmt->execute([$userId]);
@@ -41,12 +41,12 @@ if ($userId) {
 
         if ($userInfo) {
             if ($isParticipating) {
-                // OPTIONNEL : Désinscription (DELETE)
+
                 $deleteSql = "DELETE FROM user_has_event WHERE user_id = ? AND event_id = ?";
                 $delStmt = $pdo->prepare($deleteSql);
                 $delStmt->execute([$userId, $eventId]);
             } else {
-                // INSCRIPTION (INSERT)
+
                 // On insère user_id, event_id MAIS AUSSI roles_id et promo_id comme demandé par ta structure BDD
                 $insertSql = "INSERT INTO user_has_event (user_id, user_roles_id, user_promo_id, event_id) VALUES (?, ?, ?, ?)";
                 $insStmt = $pdo->prepare($insertSql);
@@ -63,7 +63,7 @@ if ($userId) {
         }
     }
 }
-// --- FIN LOGIQUE AJOUTÉE ---
+
 ?>
 
 <div class="detail-container">
@@ -103,19 +103,19 @@ if ($userId) {
 
     </div>
 
-    <!-- ZONE D'ACTION MODIFIÉE -->
+
     <div class="fixed-bottom-action">
         <form method="POST">
             <!-- Input caché pour identifier l'action -->
             <input type="hidden" name="toggle_participation" value="1">
             
             <?php if ($isParticipating): ?>
-                <!-- Bouton si DÉJÀ INSCRIT (Style gris/désactivé ou rouge pour désinscrire) -->
+                <!-- Bouton si déjà inscrit -->
                 <button type="submit" class="btn-participate" style="background-color: #E5E5EA; color: #333;">
                     ✓ Déjà inscrit (Se désinscrire)
                 </button>
             <?php else: ?>
-                <!-- Bouton si NON INSCRIT (Style Bleu normal) -->
+                <!-- Bouton si pas inscri -->
                 <button type="submit" class="btn-participate">
                     Je participe
                 </button>

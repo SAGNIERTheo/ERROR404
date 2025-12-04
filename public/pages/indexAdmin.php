@@ -62,7 +62,7 @@ if ($nextEvent) {
         </div>
 
         <div class="admin-stat-card admin-stat-card-small">
-            <div class="admin-stat-label">Évènements en cours</div>
+            <div class="admin-stat-label">Évènements</div>
             <span class="admin-stat-value"><?= $totalEvents ?></span>
             <a href="?page=adminEvents" class="admin-stat-link">voir les évènements</a>
         </div>

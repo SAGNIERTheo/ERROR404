@@ -43,7 +43,7 @@ $routes = [
 // Sécurité : page inexistante = erreur 404
 if (!array_key_exists($page, $routes)) {
     http_response_code(404);
-    echo "Page introuvable";
+    echo "Page introuvable - erreur 404 (une vraie cette fois ci)"; 
     exit;
 }
 

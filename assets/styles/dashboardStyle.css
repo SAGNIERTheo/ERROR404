@@ -152,7 +152,7 @@
   text-transform: uppercase;
 }
 
-/* --- CAROUSEL ÉVÉNEMENTS --- */
+/* --- carousel event --- */
 .section-header {
   padding: 0 20px;
   display: flex;
@@ -170,12 +170,16 @@
   color: #000;
 }
 
+.title-event{
+  margin-top: 15px;
+}
+
 .events-carousel {
   display: flex;
   gap: 15px;
   overflow-x: auto;
   padding: 0 20px 20px 20px;
-  scrollbar-width: none;
+  scrollbar-width: none; 
 }
 .events-carousel::-webkit-scrollbar {
   display: none;
@@ -210,19 +214,19 @@
   flex-shrink: 0;
 }
 
-/* --- BOTTOM NAV BAR --- */
+/* --- nav --- */
 .bottom-nav {
   position: fixed;
   bottom: 0;
   width: 100%;
-  max-width: 414px; /* Garde la largeur du conteneur */
+  max-width: 414px; 
   background-color: #fff;
   border-top: 1px solid #e5e5ea;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 70px;
-  padding-bottom: 10px; /* Pour les écrans récents */
+  padding-bottom: 10px;
   z-index: 100;
 }
 
@@ -275,7 +279,6 @@
         flex-direction: column;
     }
 
-    /* Image Header en haut de page */
     .detail-header-img {
         width: 100%;
         height: 300px;
@@ -283,7 +286,6 @@
         position: relative;
     }
 
-    /* Bouton retour flottant */
     .btn-back {
         position: absolute;
         top: 20px;
@@ -304,8 +306,8 @@
 
     .detail-content {
         padding: 25px;
-        border-radius: 25px 25px 0 0; /* Arrondi vers le haut */
-        margin-top: -30px; /* Chevauche l'image */
+        border-radius: 25px 25px 0 0;
+        margin-top: -30px; /* sur l'image */
         background: white;
         position: relative;
         flex: 1;
@@ -346,7 +348,6 @@
         color: #444;
     }
 
-    /* Bouton d'action fixe en bas */
     .fixed-bottom-action {
         position: fixed;
         bottom: 20px;
@@ -419,7 +420,7 @@
             background-color: #E5E5EA;
         }
 
-                /* Style Liste Paramètres */
+
         .settings-list {
             padding: 0 20px;
             margin-top: 10px;
@@ -444,7 +445,7 @@
 
         .settings-label {
             font-size: 13px;
-            color: #8e8e93; /* Gris clair */
+            color: #8e8e93;
             text-transform: uppercase;
             font-weight: 600;
             margin-bottom: 4px;
@@ -512,4 +513,14 @@
             font-size: 14px;
             color: #333;
             text-align: center;
+        }
+
+        .logo-dashboard{
+          width: 100%;
+          padding: 0 50px;
+          
+        }
+
+        .logo-dashboard img{
+          border-radius: 20px;
         }
