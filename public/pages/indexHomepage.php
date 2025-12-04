@@ -127,13 +127,13 @@
             stroke-width: 2;
         }
 
-        /* --- PAGINATION (Les 3 points) --- */
+
         .pagination-dots {
             display: flex;
             justify-content: center;
             gap: 6px;
             margin-top: 10px;
-            margin-bottom: auto; /* Pousse le reste vers le bas */
+            margin-bottom: auto; 
         }
 
         .dot {
@@ -147,7 +147,7 @@
             background-color: #8e8e93;
         }
 
-        /* --- BOUTONS ACTIONS --- */
+
         .actions-container {
             margin-top: 40px;
             display: flex;
@@ -161,7 +161,7 @@
             align-items: center;
             width: 100%;
             height: 50px;
-            border-radius: 8px; /* Arrondis légers comme la maquette */
+            border-radius: 8px; 
             font-size: 16px;
             font-weight: 600;
             text-decoration: none;
@@ -173,12 +173,12 @@
         }
 
         .btn-login {
-            background-color: #1c1c1e; /* Noir/Gris très foncé */
+            background-color: #1c1c1e; 
             color: #ffffff;
         }
 
         .btn-register {
-            background-color: #0044FF; /* Bleu électrique */
+            background-color: #0044FF; 
             color: #ffffff;
         }
 
@@ -203,9 +203,9 @@
                 
                 <div class="user-info">
                     <div class="user-name">
-                        Helena <span class="group-name">in BDE Sup'Internet</span>
+                        Adam <span class="group-name">du BDE 'ERROR404'</span>
                     </div>
-                    <div class="post-time">3 min ago</div>
+                    <div class="post-time">17 min ago</div>
                 </div>
 
                 <div class="options-menu">•••</div>
@@ -214,12 +214,12 @@
             <!-- Image Principale -->
             <div class="post-image-container">
                 <!-- Image de bouteilles/bar -->
-                <img src="https://images.unsplash.com/photo-1560512823-8db03e41604a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Soirée Bar" class="post-image">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/e1/68/23/pub-o-kallaghan-s.jpg?w=500&h=-1&s=1" alt="Soirée Bar" class="post-image">
             </div>
 
             <!-- Texte -->
             <p class="post-text">
-                Soirée bar vendredi 04/02/26 à 21h au O'Sullivans ! Venez nombreux 🍻
+                Soirée bar vendredi 04/02/26 à 21h a l'O'Kallaghan's ! Venez nombreux 🍻
             </p>
 
             <!-- Likes & Commentaires -->
