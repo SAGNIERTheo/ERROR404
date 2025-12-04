@@ -124,6 +124,12 @@
     </a>
 
     <!-- LISTE DES 2 DERNIÈRES ALERTES -->
+    <a href="?page=alerts">
+        <div class="section-header">
+            <div class="section-title">Mes notifications</div>
+            <div class="see-more-icon">›</div>
+        </div>
+    </a>
     <div class="activity-list">
         <?php if (empty($notifs)): ?>
             <p style="text-align:center; color:#999; padding:20px;">Aucune alerte récente.</p>
