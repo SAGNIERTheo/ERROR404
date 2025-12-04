@@ -2,8 +2,7 @@
 
     include_once './public/includes/nav.php';
 
-// Préparation de la requête
-// On sélectionne image et titre du prochain event
+// Préparation de la requête pour l'affichage du prochain event
 $sql = "SELECT name, image FROM event
         WHERE dateStart >= NOW() 
         ORDER BY dateStart ASC 
@@ -12,7 +11,6 @@ $sql = "SELECT name, image FROM event
 $stmt = $pdo->query($sql);
 $nextEvent = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Gestion de l'image par défaut
 // Si $nextEvent est faux (pas de résultat), on met une titre/image par défaut
 if ($nextEvent) {
     $heroImage = $nextEvent['image'];
@@ -22,6 +20,15 @@ if ($nextEvent) {
     $heroImage = "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"; 
     $heroTitle = "Aucun événement à venir";
 }
+
+
+$sql = "SELECT name, image FROM event
+        WHERE dateStart >= NOW() 
+        ORDER BY dateStart ASC 
+        LIMIT 1";
+
+$stmt = $pdo->query($sql);
+$nextEvent = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!-- Mettre en place un title Head dynamique avec js (voir doc internet) -->
