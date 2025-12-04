@@ -36,11 +36,10 @@
             WHERE dateStart >= NOW() 
             ORDER BY dateStart ASC
             LIMIT 2";
+            
     $stmtNotifs = $pdo->query($sqlNotifs);
     $notifs = $stmtNotifs->fetchAll(PDO::FETCH_ASSOC);
 
-    // --- 4. LOGIQUE CAROUSEL (MES ÉVÉNEMENTS) ---
-    // ✅ MODIFICATION ICI : On filtre par l'ID de l'utilisateur connecté
     $userId = $_SESSION['id'];
 
     $sqlCarousel = "SELECT e.id, e.name, e.image 
@@ -84,10 +83,8 @@
         }
         
         /* Cale pour le scroll (Nav fixe) */
-        .bottom-spacer { height: 100px; width: 100%; flex-shrink: 0; }
+        .bottom-spacer { height: 80px; width: 100%; flex-shrink: 0; }
         
-        /* Correctif container */
-        .app-container { min-height: 100vh; height: auto !important; flex: 1 0 auto; padding-bottom: 0 !important; }
     </style>
 </head>
 
@@ -196,8 +193,5 @@
         <?php endif; ?>
 
     </div>
-
-    <!-- Cale invisible pour la nav -->
-    <div class="bottom-spacer"></div>
 
 </section>
