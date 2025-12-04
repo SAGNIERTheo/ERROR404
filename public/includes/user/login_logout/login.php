@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <img src="./assets/images/logo2.jpg" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
     </div>
 
-    <form action="#" method="POST">
+    <form action="#" method="POST" >
         <h2>Connexion</h2>
         <input class="input-login" type="email" name="userEmail" placeholder="Votre email" required value="<?= htmlspecialchars($_POST['userEmail'] ?? '') ?>">
         <input class="input-login" type="password" name="userPwd" placeholder="Votre mot de passe" required>

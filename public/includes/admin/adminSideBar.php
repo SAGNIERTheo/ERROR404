@@ -8,13 +8,10 @@ $adminName = $_SESSION['firstName'] ?? 'Admin';
 $adminInitial = strtoupper(substr($adminName, 0, 1));
 ?>
 
-<style>
-    /* Style spécifique pour l'avatar en lettre (à déplacer dans adminStyle.css plus tard) */
-
-</style>
-
 <nav class="admin-sidebar">
-    <div class="admin-logo">ERROR 404</div>
+    <div class="admin-logo">
+        <img src="./assets/images/logo1.jpg" alt="Logo de l'association étudiante 'ERROR404'">
+    </div>
 
     <ul class="admin-menu-list">
         

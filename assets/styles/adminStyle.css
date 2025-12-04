@@ -49,6 +49,10 @@
   margin-bottom: 50px;
 }
 
+.admin-logo img{
+    border-radius: 8px;
+}
+
 .admin-menu-list {
   list-style: none;
   flex: 1;
