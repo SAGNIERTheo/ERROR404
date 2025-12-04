@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 
-<section class="container-login">
+<section class="app-container container-login">
     <div class="logo-login">
         <img src="./assets/images/logo2.jpg" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
     </div>

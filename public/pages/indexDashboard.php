@@ -82,8 +82,11 @@
             text-decoration: none;
         }
         
-        /* Cale pour le scroll (Nav fixe) */
-        .bottom-spacer { height: 80px; width: 100%; flex-shrink: 0; }
+        /* Cale pour laisser un espace */
+        .bottom-spacer { 
+            height: 80px; 
+            width: 100%; 
+            flex-shrink: 0; }
         
     </style>
 </head>
@@ -159,13 +162,15 @@
         <?php endif; ?>
     </div>
 
-    <!-- Logo ERROR404 -->
-    <h2 class="bde-title">ERROR 404</h2>
+
+    <div class="logo-dashboard">
+        <img src="./assets/images/logo1.jpg" alt="logo de l'association étudiante 'ERROR404' de l'école Need For School Rouen" >
+    </div>
 
     <!-- MES ÉVÉNEMENTS (CAROUSEL) -->
      <a href="#">
         <div class="section-header">
-            <div class="section-title">Mes évènements</div>
+            <div class="section-title title-event">Mes évènements</div>
             <div class="see-more-icon">›</div>
         </div>
     </a>
