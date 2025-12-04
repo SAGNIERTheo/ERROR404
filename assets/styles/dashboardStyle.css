@@ -368,3 +368,148 @@
         font-weight: 700;
         box-shadow: 0 4px 15px rgba(0, 68, 255, 0.3);
     }
+
+            .header-nav {
+            padding: 10px 20px;
+        }
+        .link-back {
+            color: #0044FF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Page modifier infos user */
+        .security-section {
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .btn-password {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            border: 2px solid #E5E5EA;
+            border-radius: 14px;
+            color: #1c1c1e;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-password:active {
+            background-color: #f9f9f9;
+            border-color: #d1d1d6;
+        }
+
+        .btn-edit-small {
+            color: #0044FF;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: #F2F2F7;
+            padding: 8px 14px;
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+        .btn-edit-small:active {
+            background-color: #E5E5EA;
+        }
+
+                /* Style Liste Paramètres */
+        .settings-list {
+            padding: 0 20px;
+            margin-top: 10px;
+        }
+
+        .settings-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .settings-item:last-child {
+            border-bottom: none;
+        }
+
+        .settings-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .settings-label {
+            font-size: 13px;
+            color: #8e8e93; /* Gris clair */
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .settings-value {
+            font-size: 17px;
+            color: #1c1c1e;
+            font-weight: 500;
+        }
+
+        .form-content {
+            padding: 0 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px; 
+            background-color: #FAFAFA;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #0044FF;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .btn-submit {
+            background-color: #0044FF;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 68, 255, 0.2);
+        }
+
+        /* Style pour les messages echo de la logique */
+        .logic-message {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
